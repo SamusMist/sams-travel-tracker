@@ -17,5 +17,15 @@ describe('Traveler', () => {
     expect(Trips).to.be.a('function');
   })
 
+  it('should hold a user ID', () => {
+    expect(trip1.userID).to.equal(1);
+    expect(trip2.userID).to.equal(2);
+    expect(trip3.userID).to.equal(3);
+  })
 
+  it('should hold a destination ID', () => {
+    expect(trip1.destinationID).to.equal(49);
+    expect(trip2.destinationID).to.equal(25);
+    expect(trip3.destinationID).to.equal(22);
+  })
 })
