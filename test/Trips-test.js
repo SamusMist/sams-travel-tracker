@@ -4,7 +4,7 @@ import Trips from '../src/Trips.js';
 
 
 
-describe('Traveler', () => {
+describe('Trips', () => {
   let trip1, trip2, trip3;
 
     beforeEach(() => {
