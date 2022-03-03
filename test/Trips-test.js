@@ -28,4 +28,16 @@ describe('Traveler', () => {
     expect(trip2.destinationID).to.equal(25);
     expect(trip3.destinationID).to.equal(22);
   })
+
+  it('should show then number of travelers', () => {
+    expect(trip1.numOfTravelers).to.equal(1);
+    expect(trip2.numOfTravelers).to.equal(5);
+    expect(trip3.numOfTravelers).to.equal(4);
+  })
+
+  it('should show then number of travelers', () => {
+    expect(trip1.date).to.equal("2022/09/16");
+    expect(trip2.date).to.equal("2022/10/04");
+    expect(trip3.date).to.equal("2022/05/22");
+  })
 })
