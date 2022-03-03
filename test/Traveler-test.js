@@ -15,4 +15,10 @@ describe('Traveler', () => {
     expect(Traveler).to.be.a('function');
   })
 
+  it('should have an id', () => {
+    expect(traveler1.id).to.equal(1);
+    expect(traveler2.id).to.equal(2);
+    expect(traveler3.id).to.equal(3);
+  })
+
 })
