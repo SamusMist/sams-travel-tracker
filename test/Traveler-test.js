@@ -21,4 +21,16 @@ describe('Traveler', () => {
     expect(traveler3.id).to.equal(3);
   })
 
+  it('should have a name', () => {
+    expect(traveler1.name).to.equal("Ham Leadbeater");
+    expect(traveler2.name).to.equal("Rachael Vaughten");
+    expect(traveler3.name).to.equal("Sibby Dawidowitsch");
+  })
+
+  it('should have a traveler type', () => {
+    expect(traveler1.travelerType).to.equal("relaxer");
+    expect(traveler2.travelerType).to.equal("thrill-seeker");
+    expect(traveler3.travelerType).to.equal("shopper");
+  })
+
 })
