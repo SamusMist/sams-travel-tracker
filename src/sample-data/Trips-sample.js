@@ -1,7 +1,7 @@
 const trips = [
 {
 "id": 1,
-"userID": 44,
+"userID": 1,
 "destinationID": 49,
 "travelers": 1,
 "date": "2022/09/16",
@@ -11,7 +11,7 @@ const trips = [
 },
 {
 "id": 2,
-"userID": 35,
+"userID": 2,
 "destinationID": 25,
 "travelers": 5,
 "date": "2022/10/04",
