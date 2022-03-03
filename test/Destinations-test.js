@@ -16,4 +16,15 @@ describe('Destinations', () => {
     expect(Destinations).to.be.a('function');
   })
 
+  it('should have a destination id', () => {
+    expect(destination1.id).to.equal(1);
+    expect(destination2.id).to.equal(2);
+    expect(destination3.id).to.equal(3);
+  })
+
+  it('should have a location', () => {
+    expect(destination1.destination).to.equal('Lima, Peru');
+    expect(destination2.destination).to.equal('Stockholm, Sweden');
+    expect(destination3.destination).to.equal('Sydney, Austrailia');
+  })
 })
