@@ -9,7 +9,7 @@ let yearCost = document.querySelector('.annual-cost');
 
 const welcome = (person) => {
   welcomeUser.innerHTML += `
-  <h1>welcome back, ${person.name}!</h1>
+  <h1>${person.name}!</h1>
   `
 }
 
