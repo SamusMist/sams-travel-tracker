@@ -64,6 +64,13 @@ class Traveler {
     })
     return result;
   }
+
+  getFutureTrips() {
+    const result = this.trips.filter(currTrip =>  {
+      return currTrip.date.split('/').join('') > this.reformatDate().split('/').reverse().join('')
+    })
+    return result;
+  }
 }
 
 export default Traveler;

@@ -1,5 +1,5 @@
 import Traveler from './Traveler.js';
-
+let welcomeUser = document.querySelector('.welcome');
 let mainData = document.querySelector('.main-data');
 let pastTrips = document.querySelector('.past-trips');
 let presentTrips = document.querySelector('.present-trips');
@@ -7,6 +7,11 @@ let futureTrips = document.querySelector('.future-trips');
 let pending = document.querySelector('.pending');
 let yearCost = document.querySelector('.annual-cost');
 
+const welcome = (person) => {
+  welcomeUser.innerHTML += `
+  <h1>welcome back, ${person.name}!</h1>
+  `
+}
 
 const pendingTripDataDom = (person, tripData, destData) => {
   person.addUserTrips(tripData);
@@ -46,16 +51,20 @@ const pastTripsDom = (person, tripData, destData) => {
     `
   })
 }
-//
-// const presentTripsDom = () => {
-//   presentTrips.innerHTML += `
-//   <p>${method that shows all users present trips}</p>
-//   `
-// }
-// const futureTripsDom = () => {
-//   futureTrips.innerHTML += `
-//   <p>${method that shows all users future trips}</p>
-//   `
-// }
 
-export {pendingTripDataDom, annualCostDataDom, pastTripsDom}
+const futureTripsDom = (person, tripData, destData) => {
+  person.addUserTrips(tripData);
+  person.addDestinationToTrip(destData);
+  person.getFutureTrips().forEach(currTrip => {
+    futureTrips.innerHTML += `
+    <p>${currTrip.date}</p>
+    <p>${currTrip.duration} days</p>
+    <p>${currTrip.travelers} travelers</p>
+    <p>${currTrip.destination.destination}</p>
+    <img src="${currTrip.destination.image} alt=${currTrip.destination.alt}">
+    </div>
+    `
+  })
+}
+
+export {welcome, pendingTripDataDom, annualCostDataDom, pastTripsDom, futureTripsDom}
