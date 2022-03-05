@@ -36,7 +36,7 @@ class Traveler {
           total += ((currTrip.destination.estimatedLodgingCostPerDay * currTrip.duration) +
           (currTrip.destination.estimatedFlightCostPerPerson * currTrip.travelers))
       })
-      return total;
+      return total * 1.1;
     }
 
   calculateCostYear() {
