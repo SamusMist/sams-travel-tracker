@@ -22,25 +22,13 @@ class Traveler {
         if(this.id === currTrip.userID) {
           this.trips.push(currTrip)
         }
-        return this.trips
+        return this.trips;
       })
     }
 
   getPendingTripsByUserID() {
     return this.trips.filter(currTrip => currTrip.status === 'pending');
   }
-
-  // matchDestInfoToTrip() {
-  //   let destInfo = []
-  //   this.getPendingTripsByUserID().forEach(currPendTrip => {
-  //     this.destinations.forEach(currDest => {
-  //       if(currDest.id === currPendTrip.destinationID) {
-  //         destInfo.push(currDest)
-  //       }
-  //     })
-  //   })
-  //   return destInfo
-  // }
 
   calculateApprovedCost() {
     let total = 0;
@@ -57,8 +45,24 @@ class Traveler {
     const getCurrYearTrips = this.trips.filter(currTrip => {
       return currTrip.status === 'approved' && currTrip.date.includes(currYear)
     })
-    console.log(getCurrYearTrips)
-    return getCurrYearTrips
+    return getCurrYearTrips;
+  }
+
+  reformatDate() {
+    let today = new Date()
+    let dd = String(today.getDate()).padStart(2, '0')
+    let mm = String(today.getMonth() + 1).padStart(2, '0')
+    let yyyy = today.getFullYear()
+    let newToday = `${mm}/${dd}/${yyyy}`
+    return newToday;
+  }
+
+  getPastTrips() {
+    console.log(this.reformatDate().split('/').reverse().join(''))
+    const result = this.trips.filter(currTrip =>  {
+      return currTrip.date.split('/').join('') < this.reformatDate().split('/').reverse().join('')
+    })
+    return result;
   }
 }
 

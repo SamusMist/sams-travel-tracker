@@ -21,7 +21,6 @@ const pendingTripDataDom = (person, tripData, destData) => {
       <img src="${trip.destination.image} alt=${trip.destination.alt}">
     </div>
     `
-
   })
 }
 
@@ -31,14 +30,22 @@ const annualCostDataDom = (person) => {
     <p>${person.calculateApprovedCost()}</p>
     </div>
     `
-
 }
 
-// const pastTripsDom = () => {
-//   pastTrips.innerHTML += `
-//   <p>${method that shows all users past trips}</p>
-//   `
-// }
+const pastTripsDom = (person, tripData, destData) => {
+  person.addUserTrips(tripData);
+  person.addDestinationToTrip(destData);
+  person.getPastTrips().forEach(currTrip => {
+    pastTrips.innerHTML += `
+    <p>${currTrip.date}</p>
+    <p>${currTrip.duration} days</p>
+    <p>${currTrip.travelers} travelers</p>
+    <p>${currTrip.destination.destination}</p>
+    <img src="${currTrip.destination.image} alt=${currTrip.destination.alt}">
+    </div>
+    `
+  })
+}
 //
 // const presentTripsDom = () => {
 //   presentTrips.innerHTML += `
@@ -51,4 +58,4 @@ const annualCostDataDom = (person) => {
 //   `
 // }
 
-export {pendingTripDataDom, annualCostDataDom}
+export {pendingTripDataDom, annualCostDataDom, pastTripsDom}
