@@ -17,36 +17,49 @@ class Traveler {
       })
     }
 
-
-  getPendingTripsByUserID(allTrips) {
-    const getTrip = allTrips.filter(currTrip => this.id === currTrip.userID);
-    getTrip.forEach(trip => {
-      if(trip.status === 'pending'){
-        this.trips.push(trip)
-      }
-    })
-    return this.trips
-  }
-
-  matchDestInfoToTrip() {
-    let destInfo = []
-    this.getPendingTripsByUserID().forEach(currPendTrip => {
-      this.destinations.forEach(currDest => {
-        if(currDest.id === currPendTrip.destinationID) {
-          destInfo.push(currDest)
+    addUserTrips(allTrips) {
+      const getTrip = allTrips.filter(currTrip => {
+        if(this.id === currTrip.userID) {
+          this.trips.push(currTrip)
         }
-      })
-    })
-    return destInfo
-  }
-
-  annualCost() {
-    const result = this.trips.forEach(currTrip => {
-        if(currTrip.destination.id === currTrip.destinationID) {
-          currTrip.totalCost = currTrip.destination.estimatedLodgingCostPerDay + currTrip.destination.estimatedFlightCostPerPerson
-        }
+        return this.trips
       })
     }
+
+  getPendingTripsByUserID() {
+    return this.trips.filter(currTrip => currTrip.status === 'pending');
+  }
+
+  // matchDestInfoToTrip() {
+  //   let destInfo = []
+  //   this.getPendingTripsByUserID().forEach(currPendTrip => {
+  //     this.destinations.forEach(currDest => {
+  //       if(currDest.id === currPendTrip.destinationID) {
+  //         destInfo.push(currDest)
+  //       }
+  //     })
+  //   })
+  //   return destInfo
+  // }
+
+  calculateApprovedCost() {
+    let total = 0;
+    const calculatorCostApproved = this.calculateCostYear().forEach(currTrip => {
+          total += ((currTrip.destination.estimatedLodgingCostPerDay * currTrip.duration) +
+          (currTrip.destination.estimatedFlightCostPerPerson * currTrip.travelers))
+      })
+      return total;
+    }
+
+  calculateCostYear() {
+    let today = new Date();
+    let currYear = new Date(today).getFullYear();
+    const getCurrYearTrips = this.trips.filter(currTrip => {
+      return currTrip.status === 'approved' && currTrip.date.includes(currYear)
+    })
+    console.log(getCurrYearTrips)
+    return getCurrYearTrips
+  }
 }
 
 export default Traveler;

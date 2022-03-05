@@ -5,12 +5,13 @@ let pastTrips = document.querySelector('.past-trips');
 let presentTrips = document.querySelector('.present-trips');
 let futureTrips = document.querySelector('.future-trips');
 let pending = document.querySelector('.pending');
+let yearCost = document.querySelector('.annual-cost');
 
 
 const pendingTripDataDom = (person, tripData, destData) => {
-  person.getPendingTripsByUserID(tripData).forEach(trip => {
-    person.addDestinationToTrip(destData)
-    console.log(trip)
+  person.addUserTrips(tripData);
+  person.addDestinationToTrip(destData);
+  person.getPendingTripsByUserID().forEach(trip => {
     pending.innerHTML += `
     <div class="pending-data">
       <p>${trip.date}</p>
@@ -24,13 +25,13 @@ const pendingTripDataDom = (person, tripData, destData) => {
   })
 }
 
-const annualCostDataDom = () => {
-  mainData.innerHTML += `
-  <div class="annual-cost">
-  <p>annual cost:</p>
-  <p>${method that shows total spent on trips for user}</p>
-  </div>
-  `
+const annualCostDataDom = (person) => {
+    yearCost.innerHTML += `
+    <div class="annual-cost">
+    <p>${person.calculateApprovedCost()}</p>
+    </div>
+    `
+
 }
 
 // const pastTripsDom = () => {
@@ -50,4 +51,4 @@ const annualCostDataDom = () => {
 //   `
 // }
 
-export {pendingTripDataDom}
+export {pendingTripDataDom, annualCostDataDom}
