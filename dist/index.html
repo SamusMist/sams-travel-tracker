@@ -22,14 +22,14 @@
       <article class="choose-adventure">
         <h2>choose your next adventure</h2>
         <form class="adventure-form" id="adventure">
-          <label for="adventure-date">
-          <input type="date" placeholder="select a date" id="adventure-date" required/>
-          <label for="adventure-days">
-          <input  type="number" placeholder="number of days" name="adventure-days" id="adventure-days" min="1" max="30" required/>
-          <label for="destination">
-          <input  placeholder="destination" name="destination" id="destination" required/>
-          <label for="travelers">
-          <input  type="number" placeholder="number of travelers" name="travelers" id="travelers" min="1" max="15" required/>
+          <label for="adventure-date">select a date</label>
+          <input type="date" id="adventure-date" required/>
+          <label for="adventure-days">number of days</label>
+          <input  type="number" name="adventure-days" id="adventure-days" min="1" max="30" required/>
+          <label for="destination">choose destination</label>
+          <select name="destination" id="destination" required></select>
+          <label for="travelers">number of travelers</label>
+          <input  type="number" name="travelers" id="travelers" min="1" max="15" required/>
           <input type="submit" value="submit request">
         </form>
       </article>
