@@ -1,6 +1,6 @@
 const destinations = [
 {
-"id": 1,
+"id": 49,
 "destination": "Lima, Peru",
 "estimatedLodgingCostPerDay": 70,
 "estimatedFlightCostPerPerson": 400,
@@ -8,7 +8,7 @@ const destinations = [
 "alt": "overview of city buildings with a clear sky"
 },
 {
-"id": 2,
+"id": 25,
 "destination": "Stockholm, Sweden",
 "estimatedLodgingCostPerDay": 100,
 "estimatedFlightCostPerPerson": 780,
@@ -16,7 +16,7 @@ const destinations = [
 "alt": "city with boats on the water during the day time"
 },
 {
-"id": 3,
+"id": 22,
 "destination": "Sydney, Austrailia",
 "estimatedLodgingCostPerDay": 130,
 "estimatedFlightCostPerPerson": 950,
@@ -24,7 +24,7 @@ const destinations = [
 "alt": "opera house and city buildings on the water with boats"
 },
 {
-"id": 4,
+"id": 14,
 "destination": "Cartagena, Colombia",
 "estimatedLodgingCostPerDay": 65,
 "estimatedFlightCostPerPerson": 350,
@@ -32,7 +32,7 @@ const destinations = [
 "alt": "boats at a dock during the day time"
 },
 {
-"id": 5,
+"id": 29,
 "destination": "Madrid, Spain",
 "estimatedLodgingCostPerDay": 150,
 "estimatedFlightCostPerPerson": 650,
@@ -40,7 +40,7 @@ const destinations = [
 "alt": "city with clear skys and a road in the day time"
 },
 {
-"id": 6,
+"id": 35,
 "destination": "Jakarta, Indonesia",
 "estimatedLodgingCostPerDay": 70,
 "estimatedFlightCostPerPerson": 890,
@@ -48,7 +48,7 @@ const destinations = [
 "alt": "lit up city at night"
 },
 {
-"id": 7,
+"id": 17,
 "destination": "Paris, France",
 "estimatedLodgingCostPerDay": 100,
 "estimatedFlightCostPerPerson": 395,

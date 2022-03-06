@@ -1,14 +1,14 @@
 import { expect } from 'chai';
 import traveler from '../src/sample-data/Traveler-sample.js';
+import trips from '../src/sample-data/Trips-sample.js';
+import destinations from '../src/sample-data/Destinations-sample.js';
 import Traveler from '../src/Traveler.js';
 
 describe('Traveler', () => {
-  let traveler1, traveler2, traveler3
+  let traveler1
 
     beforeEach(() => {
       traveler1 = new Traveler(traveler[0]);
-      traveler2 = new Traveler(traveler[1]);
-      traveler3 = new Traveler(traveler[2]);
     });
 
   it('should be a function', () => {
@@ -17,20 +17,92 @@ describe('Traveler', () => {
 
   it('should have an id', () => {
     expect(traveler1.id).to.equal(1);
-    expect(traveler2.id).to.equal(2);
-    expect(traveler3.id).to.equal(3);
   })
 
   it('should have a name', () => {
     expect(traveler1.name).to.equal("Ham Leadbeater");
-    expect(traveler2.name).to.equal("Rachael Vaughten");
-    expect(traveler3.name).to.equal("Sibby Dawidowitsch");
   })
 
   it('should have a traveler type', () => {
     expect(traveler1.travelerType).to.equal("relaxer");
-    expect(traveler2.travelerType).to.equal("thrill-seeker");
-    expect(traveler3.travelerType).to.equal("shopper");
   })
 
+  it('should add all users trips to new trip property array', () => {
+    traveler1.addUserTrips(trips);
+    expect(traveler1.trips).to.deep.equal([{
+    "id": 1,
+    "userID": 1,
+    "destinationID": 49,
+    "travelers": 1,
+    "date": "2022/09/16",
+    "duration": 8,
+    "status": "approved",
+    "suggestedActivities": []
+    },
+    {
+    "id": 2,
+    "userID": 1,
+    "destinationID": 25,
+    "travelers": 5,
+    "date": "2022/10/04",
+    "duration": 18,
+    "status": "approved",
+    "suggestedActivities": []
+    },
+    {
+    "id": 3,
+    "userID": 1,
+    "destinationID": 22,
+    "travelers": 4,
+    "date": "2022/05/22",
+    "duration": 17,
+    "status": "pending",
+    "suggestedActivities": []
+    },
+    {
+    "id": 4,
+    "userID": 1,
+    "destinationID": 14,
+    "travelers": 2,
+    "date": "2022/02/25",
+    "duration": 10,
+    "status": "approved",
+    "suggestedActivities": []
+    },
+    {
+    "id": 5,
+    "userID": 1,
+    "destinationID": 29,
+    "travelers": 3,
+    "date": "2022/04/30",
+    "duration": 18,
+    "status": "approved",
+    "suggestedActivities": []
+    },
+    {
+    "id": 6,
+    "userID": 1,
+    "destinationID": 35,
+    "travelers": 3,
+    "date": "2020/06/29",
+    "duration": 9,
+    "status": "approved",
+    "suggestedActivities": []
+    },
+    {
+    "id": 7,
+    "userID": 1,
+    "destinationID": 17,
+    "travelers": 5,
+    "date": "2020/5/28",
+    "duration": 20,
+    "status": "approved",
+    "suggestedActivities": []
+    }])
+  })
+
+  it('should link a destination to a trip via new property', () => {
+    traveler1.addDestinationToTrip(destinations);
+    expect()
+  })
 })

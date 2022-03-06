@@ -11,7 +11,7 @@ const trips = [
 },
 {
 "id": 2,
-"userID": 2,
+"userID": 1,
 "destinationID": 25,
 "travelers": 5,
 "date": "2022/10/04",
@@ -21,7 +21,7 @@ const trips = [
 },
 {
 "id": 3,
-"userID": 3,
+"userID": 1,
 "destinationID": 22,
 "travelers": 4,
 "date": "2022/05/22",
@@ -31,7 +31,7 @@ const trips = [
 },
 {
 "id": 4,
-"userID": 43,
+"userID": 1,
 "destinationID": 14,
 "travelers": 2,
 "date": "2022/02/25",
@@ -41,7 +41,7 @@ const trips = [
 },
 {
 "id": 5,
-"userID": 42,
+"userID": 1,
 "destinationID": 29,
 "travelers": 3,
 "date": "2022/04/30",
@@ -51,51 +51,21 @@ const trips = [
 },
 {
 "id": 6,
-"userID": 29,
+"userID": 1,
 "destinationID": 35,
 "travelers": 3,
-"date": "2022/06/29",
+"date": "2020/06/29",
 "duration": 9,
 "status": "approved",
 "suggestedActivities": []
 },
 {
 "id": 7,
-"userID": 37,
+"userID": 1,
 "destinationID": 17,
 "travelers": 5,
-"date": "2022/5/28",
+"date": "2020/5/28",
 "duration": 20,
-"status": "approved",
-"suggestedActivities": []
-},
-{
-"id": 8,
-"userID": 36,
-"destinationID": 39,
-"travelers": 6,
-"date": "2022/02/07",
-"duration": 4,
-"status": "approved",
-"suggestedActivities": []
-},
-{
-"id": 9,
-"userID": 24,
-"destinationID": 19,
-"travelers": 5,
-"date": "2022/12/19",
-"duration": 19,
-"status": "approved",
-"suggestedActivities": []
-},
-{
-"id": 10,
-"userID": 9,
-"destinationID": 50,
-"travelers": 6,
-"date": "2022/07/23",
-"duration": 17,
 "status": "approved",
 "suggestedActivities": []
 }

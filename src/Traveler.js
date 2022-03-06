@@ -6,6 +6,15 @@ class Traveler {
     this.trips = [];
   }
 
+  addUserTrips(allTrips) {
+    const getTrip = allTrips.filter(currTrip => {
+      if(this.id === currTrip.userID) {
+        this.trips.push(currTrip)
+      }
+      return this.trips;
+    })
+  }
+
   addDestinationToTrip(allDest) {
     const getTrip = this.trips.filter(currTrip => this.id === currTrip.userID);
     getTrip.forEach(trip => {
@@ -14,15 +23,6 @@ class Traveler {
           trip.destination = dest
           }
         })
-      })
-    }
-
-    addUserTrips(allTrips) {
-      const getTrip = allTrips.filter(currTrip => {
-        if(this.id === currTrip.userID) {
-          this.trips.push(currTrip)
-        }
-        return this.trips;
       })
     }
 
