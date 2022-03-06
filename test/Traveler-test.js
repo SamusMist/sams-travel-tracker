@@ -119,4 +119,8 @@ describe('Traveler', () => {
     expect(traveler1.getPendingTripsByUserID()).to.deep.equal([traveler1.trips[2]])
   })
 
+  it('should calculate total annual cost of approved trips', () => {
+    traveler1.addUserTrips(trips);
+    expect(traveler1.calculateApprovedCost()).to.equal(13926.000000000002)
+  })
 })
