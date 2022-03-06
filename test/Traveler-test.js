@@ -102,7 +102,16 @@ describe('Traveler', () => {
   })
 
   it('should link a destination to a trip via new property', () => {
+    traveler1.addUserTrips(trips);
     traveler1.addDestinationToTrip(destinations);
-    expect()
+    console.log(traveler1.trips[0].destination)
+    expect(traveler1.trips[0].destination).to.deep.equal({
+    "id": 49,
+    "destination": "Lima, Peru",
+    "estimatedLodgingCostPerDay": 70,
+    "estimatedFlightCostPerPerson": 400,
+    "image": "https://images.unsplash.com/photo-1489171084589-9b5031ebcf9b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2089&q=80",
+    "alt": "overview of city buildings with a clear sky"
+    })
   })
 })
