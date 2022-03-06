@@ -6,6 +6,7 @@ let presentTrips = document.querySelector('.present-trips');
 let futureTrips = document.querySelector('.future-trips');
 let pending = document.querySelector('.pending');
 let yearCost = document.querySelector('.annual-cost');
+let destinationsInput = document.querySelector('#destination');
 
 const welcome = (person) => {
   welcomeUser.innerHTML += `
@@ -67,4 +68,13 @@ const futureTripsDom = (person, tripData, destData) => {
   })
 }
 
-export {welcome, pendingTripDataDom, annualCostDataDom, pastTripsDom, futureTripsDom}
+const addDestinationSelection = (destinations) => {
+  const getDestination = destinations.forEach(destination => {
+    const destinationOption = document.createElement('option');
+    destinationOption.innerText = destination.destination;
+    destinationOption.vale = destination.destination;
+    destinationsInput.appendChild(destinationOption);
+  });
+};
+
+export {welcome, pendingTripDataDom, annualCostDataDom, pastTripsDom, futureTripsDom, addDestinationSelection}
