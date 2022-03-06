@@ -8,4 +8,5 @@ class Destinations {
     this.alt = destination.alt;
   }
 }
+
 export default Destinations;
