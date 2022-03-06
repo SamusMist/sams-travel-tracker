@@ -6,7 +6,7 @@ let presentTrips = document.querySelector('.present-trips');
 let futureTrips = document.querySelector('.future-trips');
 let pending = document.querySelector('.pending');
 let yearCost = document.querySelector('.annual-cost');
-let destinationsInput = document.querySelector('#destination');
+let destinationsDropDown = document.querySelector('#destination');
 
 const welcome = (person) => {
   welcomeUser.innerHTML += `
@@ -69,11 +69,11 @@ const futureTripsDom = (person, tripData, destData) => {
 }
 
 const addDestinationSelection = (destinations) => {
-  const getDestination = destinations.forEach(destination => {
-    const destinationOption = document.createElement('option');
-    destinationOption.innerText = destination.destination;
-    destinationOption.vale = destination.destination;
-    destinationsInput.appendChild(destinationOption);
+  const getDestination = destinations.forEach(currDest => {
+    const destinationElement = document.createElement('option');
+    destinationElement.innerText = currDest.destination;
+    destinationElement.value = currDest.destination;
+    destinationsDropDown.appendChild(destinationElement);
   });
 };
 
