@@ -123,4 +123,80 @@ describe('Traveler', () => {
     traveler1.addUserTrips(trips);
     expect(traveler1.calculateApprovedCost()).to.equal(13926.000000000002)
   })
+
+  it('should return all past trips for user', () => {
+    traveler1.addUserTrips(trips);
+    expect(traveler1.getPastTrips()).to.deep.equal([{
+    id: 4,
+    userID: 1,
+    destinationID: 14,
+    travelers: 2,
+    date: '2022/02/25',
+    duration: 10,
+    status: 'approved',
+    suggestedActivities: [],
+    destination: {
+      id: 14,
+      destination: 'Cartagena, Colombia',
+      estimatedLodgingCostPerDay: 65,
+      estimatedFlightCostPerPerson: 350,
+      image: 'https://images.unsplash.com/photo-1558029697-a7ed1a4b94c0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80',
+      alt: 'boats at a dock during the day time'
+    }
+  },
+  {
+    id: 5,
+    userID: 1,
+    destinationID: 29,
+    travelers: 3,
+    date: '2022/04/30',
+    duration: 18,
+    status: 'approved',
+    suggestedActivities: [],
+    destination: {
+      id: 29,
+      destination: 'Madrid, Spain',
+      estimatedLodgingCostPerDay: 150,
+      estimatedFlightCostPerPerson: 650,
+      image: 'https://images.unsplash.com/photo-1543785734-4b6e564642f8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80',
+      alt: 'city with clear skys and a road in the day time'
+    }
+  },
+  {
+    id: 6,
+    userID: 1,
+    destinationID: 35,
+    travelers: 3,
+    date: '2020/06/29',
+    duration: 9,
+    status: 'approved',
+    suggestedActivities: [],
+    destination: {
+      id: 35,
+      destination: 'Jakarta, Indonesia',
+      estimatedLodgingCostPerDay: 70,
+      estimatedFlightCostPerPerson: 890,
+      image: 'https://images.unsplash.com/photo-1555333145-4acf190da336?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80',
+      alt: 'lit up city at night'
+    }
+  },
+  {
+    id: 7,
+    userID: 1,
+    destinationID: 17,
+    travelers: 5,
+    date: '2020/5/28',
+    duration: 20,
+    status: 'approved',
+    suggestedActivities: [],
+    destination: {
+      id: 17,
+      destination: 'Paris, France',
+      estimatedLodgingCostPerDay: 100,
+      estimatedFlightCostPerPerson: 395,
+      image: 'https://images.unsplash.com/photo-1524396309943-e03f5249f002?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80',
+      alt: 'city during the day time with eiffel tower'
+    }
+  }])
+  })
 })

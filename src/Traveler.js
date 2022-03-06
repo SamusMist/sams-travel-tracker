@@ -58,7 +58,6 @@ class Traveler {
   }
 
   getPastTrips() {
-    console.log(this.reformatDate().split('/').reverse().join(''))
     const result = this.trips.filter(currTrip =>  {
       return currTrip.date.split('/').join('') < this.reformatDate().split('/').reverse().join('')
     })
