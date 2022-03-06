@@ -104,7 +104,6 @@ describe('Traveler', () => {
   it('should link a destination to a trip via new property', () => {
     traveler1.addUserTrips(trips);
     traveler1.addDestinationToTrip(destinations);
-    console.log(traveler1.trips[0].destination)
     expect(traveler1.trips[0].destination).to.deep.equal({
     "id": 49,
     "destination": "Lima, Peru",
@@ -114,4 +113,10 @@ describe('Traveler', () => {
     "alt": "overview of city buildings with a clear sky"
     })
   })
+
+  it('should get all pending trips for user', () => {
+    traveler1.addUserTrips(trips);
+    expect(traveler1.getPendingTripsByUserID()).to.deep.equal([traveler1.trips[2]])
+  })
+
 })
