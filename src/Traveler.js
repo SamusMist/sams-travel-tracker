@@ -59,7 +59,7 @@ class Traveler {
 
   getPastTrips() {
     const result = this.trips.filter(currTrip =>  {
-      return currTrip.date.split('/').join('') < this.reformatDate().split('/').reverse().join('')
+      return currTrip.date.split('/').join('') < this.reformatDate().split('/').reverse().join('') && currTrip.status === 'approved'
     })
     return result;
   }

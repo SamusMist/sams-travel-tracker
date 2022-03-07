@@ -7,52 +7,62 @@
   <title>Travel Tracker</title>
 </head>
   <body>
-    <nav>
-      <h1 class="welcome"></h1>
-      <article class="main-data">
-        <div>
-          <p>pending trips:</p>
-          <section class="pending">
-          </section>
-        </div>
-        <div>
-          <p>annual cost:</p>
-          <section class="annual-cost">
-          </section>
-        </div>
-      </article>
-    </nav>
     <main>
-      <article class="choose-adventure">
-        <h2>choose your next adventure</h2>
-        <form class="adventure-form" id="adventure">
-          <label for="adventure-date">select a date</label>
-          <input type="date" name="adventure-date" id="adventure-date" required/>
-          <label for="adventure-days">number of days</label>
-          <input  type="number" name="adventure-days" id="adventure-days" min="1" max="30" required/>
-          <label for="destination">choose destination</label>
-          <select name="destination" id="destination" required></select>
-          <label for="travelers">number of travelers</label>
-          <input  type="number" name="travelers" id="travelers" min="1" max="15" required/>
-          <input class="submit-request" type="submit" value="submit request">
+      <section class="login-page">
+        <form class="login-info">
+          <label for="username">username</label>
+          <input name="username" id="username">
+          <label for="password">password</label>
+          <input type="password" name="password" id="password">
+          <button class="login-button">login</button>
         </form>
-        <label class="est-label"for="estimate">estimated cost:</label>
-        <button class="trip-estimate" name="estimate">get trip estimate</button>
-      </article>
-      <article>
-        <div>
-          <p>past trips:</p>
-          <section class="past-trips">
-          </section>
+      </section>
+      <section class="booking-page hidden">
+        <nav>
+          <h1 class="welcome"></h1>
+          <article class="main-data">
+            <div>
+              <p>pending trips:</p>
+              <section class="pending">
+              </section>
+            </div>
+            <div>
+              <p>annual cost:</p>
+              <section class="annual-cost">
+              </section>
+            </div>
+          </article>
+        </nav>
+        <div class="choose-adventure">
+          <h2>choose your next adventure</h2>
+          <form class="adventure-form" id="adventure">
+            <label for="adventure-date">select a date</label>
+            <input type="date" name="adventure-date" id="adventure-date" required/>
+            <label for="adventure-days">number of days</label>
+            <input  type="number" name="adventure-days" id="adventure-days" min="1" max="30" required/>
+            <label for="destination">choose destination</label>
+            <select name="destination" placeholder="destination" id="destination" required></select>
+            <label for="travelers">number of travelers</label>
+            <input  type="number" name="travelers" id="travelers" min="1" max="15" required/>
+            <input class="submit-request" type="submit" value="submit request">
+          </form>
+          <label class="est-label"for="estimate">estimated cost:</label>
+          <button class="trip-estimate" name="estimate">get trip estimate</button>
+          <article>
+            <div>
+              <p>past trips:</p>
+              <section class="past-trips">
+              </section>
+            </div>
+            <div>
+              <p>future trips:</p>
+              <section class="future-trips">
+              </section>
+            </div>
+          </article>
         </div>
-        <div>
-          <p>future trips:</p>
-          <section class="future-trips">
-          </section>
-        </div>
-      </article>
+      </section>
     </main>
-    <img src="./images/turing-logo.png" alt="turing logo">
     <script src="bundle.js"></script>
   </body>
 </html>
