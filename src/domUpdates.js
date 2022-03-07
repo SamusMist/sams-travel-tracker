@@ -27,7 +27,7 @@ const pendingTripDataDom = (person, tripData, destData) => {
       <p>${trip.duration} days</p>
       <p>${trip.travelers} travelers</p>
       <p>${trip.destination.destination}</p>
-      <img src="${trip.destination.image} alt=${trip.destination.alt}">
+      <img src="${trip.destination.image}" alt="${trip.destination.alt}">
     </div>
     `
   })
@@ -50,7 +50,7 @@ const pastTripsDom = (person, tripData, destData) => {
     <p>${currTrip.duration} days</p>
     <p>${currTrip.travelers} travelers</p>
     <p>${currTrip.destination.destination}</p>
-    <img src="${currTrip.destination.image} alt=${currTrip.destination.alt}">
+    <img src="${currTrip.destination.image}" alt="${currTrip.destination.alt}">
     </div>
     `
   })
@@ -65,7 +65,7 @@ const futureTripsDom = (person, tripData, destData) => {
     <p>${currTrip.duration} days</p>
     <p>${currTrip.travelers} travelers</p>
     <p>${currTrip.destination.destination}</p>
-    <img src="${currTrip.destination.image} alt=${currTrip.destination.alt}">
+    <img src="${currTrip.destination.image}" alt="${currTrip.destination.alt}">
     </div>
     `
   })
