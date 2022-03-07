@@ -5,17 +5,20 @@ import Traveler from './Traveler.js';
 import Trips from './Trips.js';
 import {fetchData, postData} from './apiCalls.js';
 import './images/turing-logo.png';
-import {welcome, pendingTripDataDom, annualCostDataDom, pastTripsDom, futureTripsDom, addDestinationSelection, resetDom} from './domUpdates.js';
+import {welcome, pendingTripDataDom, annualCostDataDom, pastTripsDom, futureTripsDom, addDestinationSelection, resetDom, show, hide, validateLogin} from './domUpdates.js';
 
 //Query Selectors
 let adventureForm = document.querySelector('.adventure-form');
 let adventureDate = document.querySelector('#adventure-date');
 let adventureDays = document.querySelector('#adventure-days');
+let destValue = document.querySelector('#destination');
 let numTravelers = document.querySelector('#travelers')
 let tripEstimateButton = document.querySelector('.trip-estimate');
 let estLabel = document.querySelector('.est-label');
-let destValue = document.querySelector('#destination');
 let submitRequest = document.querySelector('.submit-request')
+let username = document.querySelector('#username');
+let password = document.querySelector('#password');
+let loginForm = document.querySelector('.login-info');
 
 //Global Variables
 let allTravelers;
@@ -23,6 +26,7 @@ let newTraveler;
 let allTrips;
 let allDestinations;
 let tripURL = 'http://localhost:3001/api/v1/trips';
+let currUserID;
 
 //Promise all, Function invocations
 let makePromise = () => {
@@ -33,6 +37,23 @@ let makePromise = () => {
   })
 };
 
+const getUserID = () => {
+  currUserID = username.value.slice(8);
+  validateUser();
+  resetDom();
+  makePromise();
+}
+
+const validateUser = () => {
+  let userLogin = username.value.slice(0, 8);
+  if (userLogin === 'traveler' && password.value === 'travel') {
+    validateLogin();
+  } else {
+    return alert('Invalid Username or Password');
+  }
+}
+
+//domUpdates function calls
 const domHandler = () => {
   welcome(newTraveler);
   pendingTripDataDom(newTraveler, allTrips, allDestinations);
@@ -45,7 +66,7 @@ const domHandler = () => {
 //Access Api Data Function
 const accessAllData = (travelersData, tripsData, destinationsData) => {
   allTravelers = travelersData.map(traveler => new Traveler(traveler));
-  newTraveler = allTravelers[43];
+  newTraveler = allTravelers[currUserID - 1];
   allTrips = tripsData;
   allDestinations = destinationsData;
 };
@@ -68,13 +89,12 @@ const findMatchingDest = () => {
 
 //Get User Input Trip Cost Estimate
 const calculateTripEstimate = () => {
-  tripEstimateButton.classList.add('hidden');
   let tripEst = 0
   const matchingDest = findMatchingDest();
   const requestedTravelQuote = (adventureDays.value * matchingDest.estimatedLodgingCostPerDay) +
   (numTravelers.value * matchingDest.estimatedFlightCostPerPerson);
   tripEst = requestedTravelQuote * 1.1;
-  return estLabel.innerHTML += `${tripEst}`
+  return estLabel.innerHTML = `estimated cost: ${tripEst}`
 };
 
 //Post new data and recall promise
@@ -82,7 +102,7 @@ const getPostData = (e) => {
   e.preventDefault();
   const newFormEntry = {
     id: Date.now(),
-    userID: 44,
+    userID: newTraveler.id,
     destinationID: getDestinationID().id,
     travelers: parseInt(travelers.value),
     date: adventureDate.value.split('-').join('/'),
@@ -98,6 +118,10 @@ const getPostData = (e) => {
 }
 
 //Event Listeners
-window.addEventListener("onload", makePromise());
+// window.addEventListener("onload", makePromise());
 tripEstimateButton.addEventListener('click', calculateTripEstimate);
 adventureForm.addEventListener('submit', getPostData);
+loginForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  getUserID();
+})

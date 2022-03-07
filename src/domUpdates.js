@@ -11,6 +11,16 @@ let destinationsDropDown = document.querySelector('#destination');
 let tripEstimateButton = document.querySelector('.trip-estimate');
 let estLabel = document.querySelector('.est-label');
 
+//Show and hide toggle functions
+const show = (selector) => {
+  selector.classList.remove('hidden');
+}
+
+const hide = (selector) => {
+  selector.classList.add('hidden');
+}
+
+//DOM update functions
 const welcome = (person) => {
   welcomeUser.innerHTML += `
   <h1>Welcome, ${person.name}!</h1>
@@ -27,7 +37,7 @@ const pendingTripDataDom = (person, tripData, destData) => {
       <p>${trip.duration} days</p>
       <p>${trip.travelers} travelers</p>
       <p>${trip.destination.destination}</p>
-      <img src="${trip.destination.image} alt=${trip.destination.alt}">
+      <img src="${trip.destination.image}" alt="${trip.destination.alt}">
     </div>
     `
   })
@@ -50,7 +60,7 @@ const pastTripsDom = (person, tripData, destData) => {
     <p>${currTrip.duration} days</p>
     <p>${currTrip.travelers} travelers</p>
     <p>${currTrip.destination.destination}</p>
-    <img src="${currTrip.destination.image} alt=${currTrip.destination.alt}">
+    <img src="${currTrip.destination.image}" alt="${currTrip.destination.alt}">
     </div>
     `
   })
@@ -65,7 +75,7 @@ const futureTripsDom = (person, tripData, destData) => {
     <p>${currTrip.duration} days</p>
     <p>${currTrip.travelers} travelers</p>
     <p>${currTrip.destination.destination}</p>
-    <img src="${currTrip.destination.image} alt=${currTrip.destination.alt}">
+    <img src="${currTrip.destination.image}" alt="${currTrip.destination.alt}">
     </div>
     `
   })
@@ -89,6 +99,12 @@ const resetDom = () => {
   futureTrips.innerHTML = '';
   destinationsDropDown.innerHTML = '';
   estLabel.innerHTML = 'estimated cost:';
-  tripEstimateButton.classList.remove('hidden');
 }
-export {welcome, pendingTripDataDom, annualCostDataDom, pastTripsDom, futureTripsDom, addDestinationSelection, resetDom}
+
+const validateLogin = () => {
+  const loginPage = document.querySelector('.login-page');
+  const bookingPage = document.querySelector('.booking-page');
+  hide(loginPage);
+  show(bookingPage);
+}
+export {welcome, pendingTripDataDom, annualCostDataDom, pastTripsDom, futureTripsDom, addDestinationSelection, resetDom, show, hide, validateLogin}
