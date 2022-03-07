@@ -10,12 +10,16 @@
     <nav>
       <h1 class="welcome"></h1>
       <article class="main-data">
-        <section class="pending">
+        <div>
           <p>pending trips:</p>
-        </section>
-        <section class="annual-cost">
+          <section class="pending">
+          </section>
+        </div>
+        <div>
           <p>annual cost:</p>
-        </section>
+          <section class="annual-cost">
+          </section>
+        </div>
       </article>
     </nav>
     <main>
@@ -30,18 +34,22 @@
           <select name="destination" id="destination" required></select>
           <label for="travelers">number of travelers</label>
           <input  type="number" name="travelers" id="travelers" min="1" max="15" required/>
-          <input type="submit" value="submit request">
+          <input class="submit-request" type="submit" value="submit request">
         </form>
         <label class="est-label"for="estimate">estimated cost:</label>
         <button class="trip-estimate" name="estimate">get trip estimate</button>
       </article>
       <article>
-        <section class="past-trips">
+        <div>
           <p>past trips:</p>
-        </section>
-        <section class="future-trips">
+          <section class="past-trips">
+          </section>
+        </div>
+        <div>
           <p>future trips:</p>
-        </section>
+          <section class="future-trips">
+          </section>
+        </div>
       </article>
     </main>
     <img src="./images/turing-logo.png" alt="turing logo">

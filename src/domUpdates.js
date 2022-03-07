@@ -1,4 +1,5 @@
 import Traveler from './Traveler.js';
+
 let welcomeUser = document.querySelector('.welcome');
 let mainData = document.querySelector('.main-data');
 let pastTrips = document.querySelector('.past-trips');
@@ -7,10 +8,12 @@ let futureTrips = document.querySelector('.future-trips');
 let pending = document.querySelector('.pending');
 let yearCost = document.querySelector('.annual-cost');
 let destinationsDropDown = document.querySelector('#destination');
+let tripEstimateButton = document.querySelector('.trip-estimate');
+let estLabel = document.querySelector('.est-label');
 
 const welcome = (person) => {
   welcomeUser.innerHTML += `
-  <h1>${person.name}!</h1>
+  <h1>Welcome, ${person.name}!</h1>
   `
 }
 
@@ -69,12 +72,23 @@ const futureTripsDom = (person, tripData, destData) => {
 }
 
 const addDestinationSelection = (destinations) => {
-  const getDestination = destinations.forEach(currDest => {
-    const destinationElement = document.createElement('option');
-    destinationElement.innerText = currDest.destination;
-    destinationElement.value = currDest.destination;
-    destinationsDropDown.appendChild(destinationElement);
-  });
+  let destinationElement;
+    const getDestination = destinations.forEach(currDest => {
+      destinationElement = document.createElement('option');
+      destinationElement.innerText = currDest.destination;
+      destinationElement.value = currDest.destination;
+      destinationsDropDown.appendChild(destinationElement);
+    });
 };
 
-export {welcome, pendingTripDataDom, annualCostDataDom, pastTripsDom, futureTripsDom, addDestinationSelection}
+const resetDom = () => {
+  pending.innerHTML = '';
+  welcomeUser.innerHTML = '';
+  yearCost.innerHTML = '';
+  pastTrips.innerHTML = '';
+  futureTrips.innerHTML = '';
+  destinationsDropDown.innerHTML = '';
+  estLabel.innerHTML = 'estimated cost:';
+  tripEstimateButton.classList.remove('hidden');
+}
+export {welcome, pendingTripDataDom, annualCostDataDom, pastTripsDom, futureTripsDom, addDestinationSelection, resetDom}
