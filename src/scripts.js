@@ -37,6 +37,7 @@ let makePromise = () => {
   })
 };
 
+//Functions to validate user
 const getUserID = () => {
   currUserID = username.value.slice(8);
   validateUser();
@@ -117,11 +118,6 @@ const getPostData = (e) => {
     resetDom();
     makePromise();
   })
-}
-
-const hideLoginImg = () => {
-  let mainImg = document.querySelector('.mainImg')
-  hide(mainImg);
 }
 
 //Event Listeners

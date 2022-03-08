@@ -10,6 +10,7 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
 }
+
 h1, .welcome {
   font-size: 35px;
   margin: auto;
@@ -36,6 +37,7 @@ img {
   margin: auto;
   margin-top: 30vh;
 }
+
 .login-button {
   font-family: 'Vollkorn SC';
   margin-top: 10px;
@@ -45,12 +47,14 @@ img {
   border-radius: 20px;
   font-size: 20px;
 }
+
 .travel-tracker {
   margin-top: 4px;
   margin-bottom: 0px;
   font-size: 50px;
   font-weight: lighter;
 }
+
 #username, #password {
   background-color: #C4C4C4;
   border: none;
@@ -60,6 +64,7 @@ img {
   font-size: 20px;
   font-family: 'Vollkorn SC';
 }
+
 .login-input {
   font-size: 20px;
 }
@@ -68,6 +73,7 @@ img {
   display: flex;
   flex-direction: row;
 }
+
 nav {
   background-color: #B38F72;
   height: 100vh;
