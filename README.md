@@ -1,106 +1,63 @@
-# Webpack Starter Kit
+# Sam's Travel Tracker
 
-## Clone This Repo
 
-That's right, _clone_ not fork. You will use this repo multiple times, but you can only fork a repository once. So here is what you need to do to clone the repo and still be able to push changes to your repo:
+By:
+\
+[Sam Mistele](https://www.linkedin.com/in/sam-mistele-862b351b6/)
 
-1. Clone down this repo. Since you don't want to name your project "webpack-starter-kit", you can use an optional argument when you run `git clone` (you replace the `[...]` with the terminal command arguments): `git clone [remote-address] [what you want to name the repo]`
-1. Remove the default remote: `git remote rm origin` (notice that `git remote -v` not gives you back nothing)
-1. Create a new repo on GitHub with the name of `[what you want to name the repo]` to be consistent with naming
-1. Copy the address that you would use to clone down this repo - something like `git@github.com:...`
-1. Add this remote to your cloned down repo: `git remote add origin [address you copied in the previous step]` - do not include the brackets
 
-Now try to commit something and push it up to your new repo. If everything is setup correctly, you should see the changes on GitHub.
+Peer reviewed by:
+\
+[Rory Magee](https://github.com/roryemagee1)
 
-## Setup
 
-After one person has gone through the steps of cloning down this repo and editing the remote, everyone should clone down the repo. 
+An interactive travel tracker application built using OOP and local API endpoints with an emphasis on GET and POST requests.
+ Check out the project spec sheet [here](https://frontend.turing.edu/projects/travel-tracker.html).
 
-Then install the library dependencies. Run:
+## Goal
 
-```bash
-npm install
-```
+  The main goal of this project was to create a dynamic travel tracking website for a user, complete with a login page that uses fetch API to retrieve the correct travel data for each appropriate user in the local API. A user can also book a trip which will immediately post their data to the API and instantly load onto the DOM.
 
-To verify that it is setup correctly, run `npm start` in your terminal. Go to `http://localhost:8080/` and you should see a page with some `h1` text, Turing logo image and a beautiful gradient background. If that's the case, you're good to go. Enter `control + c` in your terminal to stop the server at any time.
 
-## Where to Add Your Code
+## How to Run
 
-### JavaScript
+1. Clone this repo down to your machine
+2. Clone the server repo [here](https://github.com/turingschool-examples/travel-tracker-api)
+3. Open the root directory for each repo and run `npm install` to install dependencies
+4. Run `npm start` in each repo to initialize the webpage and web server
+5. Open the site by copying and pasting the server location http://localhost:8080/ in your address bar
 
-You have to be very intentional with where you add your feature code. This repo uses a tool called [webpack](https://webpack.js.org/) to combine many JavaScript files into one big file. Webpack enables you to have many, separate JavaScript files to keep your code organized and readable. Webpack expects all of your code files to be in a specific place, or else it doesn't know how to combine them all behind the scenes.
 
-**Create all of your feature code files in the `src` directory.**
+## Features
 
-Since code is separated into multiple files, you need to use the `import` and `export` syntax to share code across file.
+**Login:**
+On load, the user user sees a login form. To log in, enter `traveler` followed by a number between 1 and 50 in the username field. The password for all users is `traveler`.
 
-Here is a video that walks through some information about [import and export](https://www.youtube.com/watch?v=_3oSWwapPKQ). There are a lot of resources out there about `import` and `export`, and resources will sometimes call them `ES6 modules`. It's something you will see in React and beyond.
+![Login Demo](https://user-images.githubusercontent.com/89484102/157313540-bc0e2b6a-16d0-4949-8e2e-4b6139ec188a.png)
 
-### HTML
+**User Dashboard:**
+Once logged in, a user can see all of their trips displayed and sorted by pending, past, and future trips. All new trip requests will be immediately updated to the pending section.
 
-Add the HTML you need in the `index.html` file in the `./dist` directory. There is some boilerplate HTML that exists from the start that you can modify.
+**Book a Trip:**
+To book a trip, the above 'choose an adventure' section must be filled out with the appropriate values. If a user would like to see the estimated cost of a trip, they may click 'get trip estimate', which will show the estimated cost for that trip, which includes a 10 percent travel agent fee.
 
-### CSS (SCSS/SASS)
+![Booking Page Screenshot](https://user-images.githubusercontent.com/89484102/157313650-ffe56d5b-611d-4682-9dd4-30774c769e9c.png)
 
-This project is setup to use SCSS/Sass files by default instead of your regular CSS files. Add your SCSS files in the `src/css` directory. There is a `base.scss` file already there, but you can change this file and add multiple SCSS files in this directory.
+#### Accessibility & Responsive Layout
 
-This might sound weird, but you need to `import` your SCSS files in the JavaScript entry file (`scripts.js`) for the styles to be applied to your HTML. The example `base.scss` file has already been imported in the JavaScript entry file as an example.
+This application was tested with the Lighthouse Chrome extension in order to address the needs of all users.
 
-### Images
+### Technologies Used
+- JavaScript
+- CSS/SCSS
+- HTML
+- Webpack
+- Mocha & Chai
+- Atom
+- Fetch API
 
-Add your image files in the `src/images` directory. Similar to CSS files, you need to `import` image files in the JavaScript entry file (`scripts.js`). Then go into the HTML and add an `img` element with the `src` attribute pointing to the `images` directory. There is an example in the `index.html` file for you to see.
-
-## How to View Your Code in Action
-
-In the terminal, run:
-
-```bash
-npm start
-```
-
-You will see a bunch of lines output to your terminal. One of those lines will be something like:
-
-```bash
-Project is running at http://localhost:8080/
-```
-
-Go to `http://localhost:8080/` in your browser to view your code running in the browser.
-
----
-
-## Test Files Organization
-
-Similar to feature code, your test code needs to be put in a specific place for it to run successfully.
-
-**Put all of your test files in the `test` directory.** As a convention, all test filenames should end with `-test.js`. For instance: `box-test.js`.
-
-## Running Your Tests
-
-Run your test suite using the command:
-
-```bash
-npm test
-```
-
-The test results will output to the terminal.
-
----
-
-## Linting Your Code
-
-Run the command in your terminal `npm run lint` to run the linter on your JavaScript code. There will be errors and warnings right from the start in this starter kit - the linter is still running successfully.
-
-Your linter will look at the JavaScript files you have within the `src` directory and the `test` directory. 
-
-## Webpack?
-
-If you look in the `package.json` file, you'll see one of the library dependencies called `webpack`. If you're interested in learning more about what Webpack is and how it works behind the scenes, take a look through the [Webpack configuration documentation](https://webpack.js.org/concepts/).
-
-## Deploying to GitHub Pages
-
-_If you are finished with the functionality and testing of your project_, then you can consider deploying your project to the web! This way anyone can play it without cloning down your repo.
-
-[GitHub Pages](https://pages.github.com/) is a great way to deploy your project to the web. Don't worry about this until your project is free of bugs and well tested!
-
-If you _are_ done, you can follow [this procedure](./gh-pages-procedure.md) to get your project live on GitHub Pages.
-# sams-travel-tracker
+#### Future Additions & Improvements
+- Add the trip amount for each individual trip.
+- Add suggested activities and travel agent prompts.
+- Round trip estimates to the nearest dollar.
+- Refactor CSS for a better user experience.
