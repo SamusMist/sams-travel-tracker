@@ -27,9 +27,14 @@ const welcome = (person) => {
   `
 }
 
-const pendingTripDataDom = (person, tripData, destData) => {
+const addTripDataToTraveler = (person, tripData, destData) => {
   person.addUserTrips(tripData);
   person.addDestinationToTrip(destData);
+}
+
+const pendingTripDataDom = (person) => {
+  // person.addUserTrips(tripData);
+  // person.addDestinationToTrip(destData);
   person.getPendingTripsByUserID().forEach(trip => {
     pending.innerHTML += `
     <div class="pending-data">
@@ -51,9 +56,7 @@ const annualCostDataDom = (person) => {
     `
 }
 
-const pastTripsDom = (person, tripData, destData) => {
-  person.addUserTrips(tripData);
-  person.addDestinationToTrip(destData);
+const pastTripsDom = (person) => {
   person.getPastTrips().forEach(currTrip => {
     pastTrips.innerHTML += `
     <div class="past-data">
@@ -67,9 +70,7 @@ const pastTripsDom = (person, tripData, destData) => {
   })
 }
 
-const futureTripsDom = (person, tripData, destData) => {
-  person.addUserTrips(tripData);
-  person.addDestinationToTrip(destData);
+const futureTripsDom = (person) => {
   person.getFutureTrips().forEach(currTrip => {
     futureTrips.innerHTML += `
     <div class="future-data">
@@ -100,7 +101,7 @@ const resetDom = () => {
   pastTrips.innerHTML = '';
   futureTrips.innerHTML = '';
   destinationsDropDown.innerHTML = '';
-  estLabel.innerHTML = 'estimated cost:';
+  estLabel.innerHTML = '';
 }
 
 const validateLogin = () => {
@@ -109,4 +110,4 @@ const validateLogin = () => {
   hide(loginPage);
   show(bookingPage);
 }
-export {welcome, pendingTripDataDom, annualCostDataDom, pastTripsDom, futureTripsDom, addDestinationSelection, resetDom, show, hide, validateLogin}
+export {welcome, pendingTripDataDom, annualCostDataDom, pastTripsDom, futureTripsDom, addDestinationSelection, resetDom, show, hide, validateLogin, addTripDataToTraveler}
