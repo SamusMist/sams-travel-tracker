@@ -33,8 +33,6 @@ const addTripDataToTraveler = (person, tripData, destData) => {
 }
 
 const pendingTripDataDom = (person) => {
-  // person.addUserTrips(tripData);
-  // person.addDestinationToTrip(destData);
   person.getPendingTripsByUserID().forEach(trip => {
     pending.innerHTML += `
     <div class="pending-data">
@@ -83,7 +81,7 @@ const futureTripsDom = (person) => {
     `
   })
 }
-
+//Add destinations to drop down
 const addDestinationSelection = (destinations) => {
   let destinationElement;
     const getDestination = destinations.forEach(currDest => {
@@ -110,4 +108,5 @@ const validateLogin = () => {
   hide(loginPage);
   show(bookingPage);
 }
+
 export {welcome, pendingTripDataDom, annualCostDataDom, pastTripsDom, futureTripsDom, addDestinationSelection, resetDom, show, hide, validateLogin, addTripDataToTraveler}
