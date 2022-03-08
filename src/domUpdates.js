@@ -23,13 +23,18 @@ const hide = (selector) => {
 //DOM update functions
 const welcome = (person) => {
   welcomeUser.innerHTML += `
-  <h1>Welcome, ${person.name}!</h1>
+  <p>${person.name}!</p>
   `
 }
 
-const pendingTripDataDom = (person, tripData, destData) => {
+const addTripDataToTraveler = (person, tripData, destData) => {
   person.addUserTrips(tripData);
   person.addDestinationToTrip(destData);
+}
+
+const pendingTripDataDom = (person) => {
+  // person.addUserTrips(tripData);
+  // person.addDestinationToTrip(destData);
   person.getPendingTripsByUserID().forEach(trip => {
     pending.innerHTML += `
     <div class="pending-data">
@@ -46,36 +51,34 @@ const pendingTripDataDom = (person, tripData, destData) => {
 const annualCostDataDom = (person) => {
     yearCost.innerHTML += `
     <div class="annual-cost">
-    <p>${person.calculateApprovedCost()}</p>
+    <p class="cost">$${person.calculateApprovedCost()}</p>
     </div>
     `
 }
 
-const pastTripsDom = (person, tripData, destData) => {
-  person.addUserTrips(tripData);
-  person.addDestinationToTrip(destData);
+const pastTripsDom = (person) => {
   person.getPastTrips().forEach(currTrip => {
     pastTrips.innerHTML += `
-    <p>${currTrip.date}</p>
-    <p>${currTrip.duration} days</p>
-    <p>${currTrip.travelers} travelers</p>
-    <p>${currTrip.destination.destination}</p>
-    <img src="${currTrip.destination.image}" alt="${currTrip.destination.alt}">
+    <div class="past-data">
+      <p>${currTrip.date}</p>
+      <p>${currTrip.duration} days</p>
+      <p>${currTrip.travelers} travelers</p>
+      <p>${currTrip.destination.destination}</p>
+      <img src="${currTrip.destination.image}" alt="${currTrip.destination.alt}">
     </div>
     `
   })
 }
 
-const futureTripsDom = (person, tripData, destData) => {
-  person.addUserTrips(tripData);
-  person.addDestinationToTrip(destData);
+const futureTripsDom = (person) => {
   person.getFutureTrips().forEach(currTrip => {
     futureTrips.innerHTML += `
-    <p>${currTrip.date}</p>
-    <p>${currTrip.duration} days</p>
-    <p>${currTrip.travelers} travelers</p>
-    <p>${currTrip.destination.destination}</p>
-    <img src="${currTrip.destination.image}" alt="${currTrip.destination.alt}">
+    <div class="future-data">
+      <p>${currTrip.date}</p>
+      <p>${currTrip.duration} days</p>
+      <p>${currTrip.travelers} travelers</p>
+      <p>${currTrip.destination.destination}</p>
+      <img src="${currTrip.destination.image}" alt="${currTrip.destination.alt}">
     </div>
     `
   })
@@ -98,7 +101,7 @@ const resetDom = () => {
   pastTrips.innerHTML = '';
   futureTrips.innerHTML = '';
   destinationsDropDown.innerHTML = '';
-  estLabel.innerHTML = 'estimated cost:';
+  estLabel.innerHTML = '';
 }
 
 const validateLogin = () => {
@@ -107,4 +110,4 @@ const validateLogin = () => {
   hide(loginPage);
   show(bookingPage);
 }
-export {welcome, pendingTripDataDom, annualCostDataDom, pastTripsDom, futureTripsDom, addDestinationSelection, resetDom, show, hide, validateLogin}
+export {welcome, pendingTripDataDom, annualCostDataDom, pastTripsDom, futureTripsDom, addDestinationSelection, resetDom, show, hide, validateLogin, addTripDataToTraveler}

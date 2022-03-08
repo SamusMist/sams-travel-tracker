@@ -1,11 +1,190 @@
 html {
-  background-color: #56A
+  font-family: vollkorn sc;
 }
+body {
+  background-image: url(https://images.unsplash.com/photo-1436491865332-7a61a109cc05?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1174&q=80);
+  height: 100vh;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+h1, .welcome {
+  font-size: 35px;
+  margin: auto;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
 img {
   height: 200px;
   width: 200px;
 }
 
+.login-info {
+  display: flex;
+  padding-top: 20px;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  border-radius: 20px;
+  width: 50vh;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.4);
+  color: black;
+  margin: auto;
+  margin-top: 30vh;
+}
+.login-button {
+  font-family: 'Vollkorn SC';
+  margin-top: 10px;
+  background: #4B88B2;
+  width: 120px;
+  border: none;
+  border-radius: 20px;
+  font-size: 20px;
+}
+.travel-tracker {
+  margin-top: 4px;
+  margin-bottom: 0px;
+  font-size: 50px;
+  font-weight: lighter;
+}
+#username, #password {
+  background-color: #C4C4C4;
+  border: none;
+  height: 25px;
+  width: 250px;
+  text-align: center;
+  font-size: 20px;
+  font-family: 'Vollkorn SC';
+}
+.login-input {
+  font-size: 20px;
+}
+
+.booking-page {
+  display: flex;
+  flex-direction: row;
+}
+nav {
+  background-color: #B38F72;
+  height: 100vh;
+  width: 20vw;
+}
+
+.main-data {
+  display: flex;
+  flex-direction: column;
+
+}
+.pending-tag {
+  font-size: 25px;
+  margin: auto;
+  margin-top: 100px;
+  margin-bottom: 10px;
+}
+
+.pending-holder {
+  margin: auto;
+  overflow: scroll;
+  height: 40vh;
+  width: 15vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background: #84ACB3;
+}
+
+.cost-holder {
+  margin: auto;
+  font-size: 25px;
+  margin-top: 25px;
+}
+
+.cost {
+  text-align: center;
+  margin-top: 5px;
+}
+
+.choose-adventure {
+  background: #A8B1B3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 20vh;
+  margin: auto;
+}
+
+.main-display {
+  display: flex;
+  flex-wrap: wrap;
+  background: #566466;
+}
+
+#adventure-date, #adventure-days, #destination, #travelers, .trip-estimate, .submit-request {
+  background-color: #84ACB3;
+  border: none;
+  font-family: vollkorn sc;
+  font-size: 12px;
+  margin: auto;
+}
+
+.est-label {
+  margin-top: 10px;
+}
+
+.trip-estimate, .submit-request {
+margin-bottom: 10px;
+background-color: #B38F72;
+}
+
+.past-trips, .future-trips {
+  margin-top: 20px;
+  display: flex;
+  margin: auto;
+  overflow: scroll;
+  height: 50vh;
+  width: 20vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background: #84ACB3;
+}
+
+.past-trips, .past-tag {
+  margin-right: 200px;
+}
+
+.past-tag, .future-tag {
+  text-align: center;
+  font-size: 30px;
+}
+
+.pending-data, .past-data, .future-data {
+  background-color: white;
+  border-radius: 10px;
+  margin: auto;
+  text-align: center;
+  margin-top: 15px;
+  box-shadow: 10px 5px 5px gray;
+}
+
+.past-future {
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+}
+
+.past-future-scroll {
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+}
+
 .hidden {
-  display: none !important; 
+  display: none !important;
 }

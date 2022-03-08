@@ -5,7 +5,7 @@ import Traveler from './Traveler.js';
 import Trips from './Trips.js';
 import {fetchData, postData} from './apiCalls.js';
 import './images/turing-logo.png';
-import {welcome, pendingTripDataDom, annualCostDataDom, pastTripsDom, futureTripsDom, addDestinationSelection, resetDom, show, hide, validateLogin} from './domUpdates.js';
+import {welcome, pendingTripDataDom, annualCostDataDom, pastTripsDom, futureTripsDom, addDestinationSelection, resetDom, show, hide, validateLogin, addTripDataToTraveler} from './domUpdates.js';
 
 //Query Selectors
 let adventureForm = document.querySelector('.adventure-form');
@@ -33,7 +33,7 @@ let makePromise = () => {
   Promise.all([fetchData('travelers'), fetchData('trips'), fetchData('destinations')])
   .then(data => {
   accessAllData(data[0].travelers, data[1].trips, data[2].destinations)
-  domHandler()
+  domHandler();
   })
 };
 
@@ -56,10 +56,11 @@ const validateUser = () => {
 //domUpdates function calls
 const domHandler = () => {
   welcome(newTraveler);
-  pendingTripDataDom(newTraveler, allTrips, allDestinations);
+  addTripDataToTraveler(newTraveler, allTrips, allDestinations)
+  pendingTripDataDom(newTraveler);
   annualCostDataDom(newTraveler);
-  pastTripsDom(newTraveler, allTrips, allDestinations);
-  futureTripsDom(newTraveler, allTrips, allDestinations);
+  pastTripsDom(newTraveler);
+  futureTripsDom(newTraveler);
   addDestinationSelection(allDestinations);
 }
 
@@ -94,7 +95,8 @@ const calculateTripEstimate = () => {
   const requestedTravelQuote = (adventureDays.value * matchingDest.estimatedLodgingCostPerDay) +
   (numTravelers.value * matchingDest.estimatedFlightCostPerPerson);
   tripEst = requestedTravelQuote * 1.1;
-  return estLabel.innerHTML = `estimated cost: ${tripEst}`
+  return estLabel.innerHTML =`
+  <p>$${tripEst}</p>`
 };
 
 //Post new data and recall promise
@@ -117,8 +119,12 @@ const getPostData = (e) => {
   })
 }
 
+const hideLoginImg = () => {
+  let mainImg = document.querySelector('.mainImg')
+  hide(mainImg);
+}
+
 //Event Listeners
-// window.addEventListener("onload", makePromise());
 tripEstimateButton.addEventListener('click', calculateTripEstimate);
 adventureForm.addEventListener('submit', getPostData);
 loginForm.addEventListener('submit', (e) => {
