@@ -94,7 +94,8 @@ const calculateTripEstimate = () => {
   const requestedTravelQuote = (adventureDays.value * matchingDest.estimatedLodgingCostPerDay) +
   (numTravelers.value * matchingDest.estimatedFlightCostPerPerson);
   tripEst = requestedTravelQuote * 1.1;
-  return estLabel.innerHTML = `estimated cost: ${tripEst}`
+  return estLabel.innerHTML =`
+  <p>$${tripEst}</p>`
 };
 
 //Post new data and recall promise
@@ -115,6 +116,11 @@ const getPostData = (e) => {
     resetDom();
     makePromise();
   })
+}
+
+const hideLoginImg = () => {
+  let mainImg = document.querySelector('.mainImg')
+  hide(mainImg);
 }
 
 //Event Listeners

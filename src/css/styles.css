@@ -1,22 +1,25 @@
 html {
+  font-family: vollkorn sc;
+}
+body {
   background-image: url(https://images.unsplash.com/photo-1436491865332-7a61a109cc05?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1174&q=80);
   height: 100vh;
-  width: 100vw;
-  font-family: vollkorn sc;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  background-repeat: no-repeat;
+}
+h1, .welcome {
+  font-size: 35px;
+  margin: auto;
+  margin-bottom: 20px;
+  text-align: center;
 }
 
 img {
   height: 200px;
   width: 200px;
-}
-
-.login-page {
-  /* display: flex; */
-  /* align-items: center; */
 }
 
 .login-info {
@@ -60,6 +63,103 @@ img {
 .login-input {
   font-size: 20px;
 }
+
+.booking-page {
+  display: flex;
+  flex-direction: row;
+}
+nav {
+  background-color: #B38F72;
+  height: 100vh;
+  width: 20vw;
+}
+
+.main-data {
+  display: flex;
+  flex-direction: column;
+
+}
+.pending-tag {
+  font-size: 25px;
+  margin: auto;
+  margin-top: 100px;
+  margin-bottom: 10px;
+}
+
+.pending-holder {
+  margin: auto;
+  overflow: scroll;
+  height: 40vh;
+  width: 15vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background: #566466;
+}
+
+.pending-data {
+  background-color: white;
+  border-radius: 10px;
+  margin: auto;
+  text-align: center;
+}
+
+.cost-holder {
+  margin: auto;
+  font-size: 25px;
+  margin-top: 25px;
+}
+
+.cost {
+  text-align: center;
+  margin-top: 5px;
+}
+
+.choose-adventure {
+  background: #A8B1B3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin: auto;
+  height: 20vh;
+}
+.main-display {
+  display: flex;
+  flex-wrap: wrap;
+  background: #566466;
+}
+#adventure-date, #adventure-days, #destination, #travelers, .trip-estimate, .submit-request {
+  background-color: #84ACB3;
+  border: none;
+  font-family: vollkorn sc;
+}
+.past-trips, .future-trips {
+  margin-top: 20px;
+  display: flex;
+  margin: auto;
+  overflow: scroll;
+  height: 50vh;
+  width: 20vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background: #84ACB3;;
+}
+.past-tag, .future-tag {
+  text-align: center;
+  font-size: 22px;
+}
+.past-data, .future-data {
+  background-color: white;
+  border-radius: 10px;
+  margin: auto;
+  text-align: center;
+  margin-top: 10px;
+}
+
 .hidden {
   display: none !important;
 }

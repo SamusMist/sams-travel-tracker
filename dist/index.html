@@ -21,46 +21,49 @@
       </section>
       <section class="booking-page hidden">
         <nav>
-          <h1 class="welcome"></h1>
+          <h1>welcome back,</h1>
+          <p class ="welcome"></p>
           <article class="main-data">
-            <div>
-              <p>pending trips:</p>
+            <p class="pending-tag">pending trips:</p>
+            <div class="pending-holder">
               <section class="pending">
               </section>
             </div>
-            <div>
+            <div class="cost-holder">
               <p>annual cost:</p>
               <section class="annual-cost">
               </section>
             </div>
           </article>
         </nav>
-        <div class="choose-adventure">
-          <h2>choose your next adventure</h2>
-          <form class="adventure-form" id="adventure">
-            <label for="adventure-date">select a date</label>
-            <input type="date" name="adventure-date" id="adventure-date" required/>
-            <label for="adventure-days">number of days</label>
-            <input  type="number" name="adventure-days" id="adventure-days" min="1" max="30" required/>
-            <label for="destination">choose destination</label>
-            <select name="destination" placeholder="destination" id="destination" required></select>
-            <label for="travelers">number of travelers</label>
-            <input  type="number" name="travelers" id="travelers" min="1" max="15" required/>
-            <input class="submit-request" type="submit" value="submit request">
-          </form>
-          <label class="est-label"for="estimate">estimated cost:</label>
-          <button class="trip-estimate" name="estimate">get trip estimate</button>
-          <article>
-            <div>
-              <p>past trips:</p>
-              <section class="past-trips">
-              </section>
-            </div>
-            <div>
-              <p>future trips:</p>
-              <section class="future-trips">
-              </section>
-            </div>
+        <div class="main-display">
+          <div class="choose-adventure">
+            <h2>choose your next adventure</h2>
+            <form class="adventure-form" id="adventure">
+              <label for="adventure-date">select a date</label>
+              <input type="date" name="adventure-date" id="adventure-date" required/>
+              <label for="adventure-days">number of days</label>
+              <input  type="number" name="adventure-days" id="adventure-days" min="1" required/>
+              <label for="destination">choose destination</label>
+              <select name="destination" placeholder="destination" id="destination" required></select>
+              <label for="travelers">number of travelers</label>
+              <input  type="number" name="travelers" id="travelers" min="1" required/>
+              <input class="submit-request" type="submit" value="submit request">
+            </form>
+            <label class="est-label"for="estimate"></label>
+            <button class="trip-estimate" name="estimate">get trip estimate</button>
+          </div>
+          <article class="past-future">
+            <!-- <div> -->
+            <p class="past-tag">past trips:</p>
+            <section class="past-trips">
+            </section>
+            <!-- </div> -->
+            <!-- <div> -->
+            <p class="future-tag">future trips:</p>
+            <section class="future-trips">
+            </section>
+            <!-- </div> -->
           </article>
         </div>
       </section>
