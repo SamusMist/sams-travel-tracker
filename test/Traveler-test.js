@@ -200,7 +200,7 @@ describe('Traveler', () => {
   }])
   })
 
-  it('should return all future trips for a user', () => {
+  it('should return all future approved trips for a user', () => {
     traveler1.addUserTrips(trips);
     expect(traveler1.getFutureTrips()).to.deep.equal([{
     id: 1,
@@ -236,24 +236,6 @@ describe('Traveler', () => {
       estimatedFlightCostPerPerson: 780,
       image: 'https://images.unsplash.com/photo-1560089168-6516081f5bf1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80',
       alt: 'city with boats on the water during the day time'
-    }
-  },
-  {
-    id: 3,
-    userID: 1,
-    destinationID: 22,
-    travelers: 4,
-    date: '2022/05/22',
-    duration: 17,
-    status: 'pending',
-    suggestedActivities: [],
-    destination: {
-      id: 22,
-      destination: 'Sydney, Austrailia',
-      estimatedLodgingCostPerDay: 130,
-      estimatedFlightCostPerPerson: 950,
-      image: 'https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80',
-      alt: 'opera house and city buildings on the water with boats'
     }
   }])
   })
