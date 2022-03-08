@@ -1,11 +1,65 @@
 html {
-  background-color: #56A
+  background-image: url(https://images.unsplash.com/photo-1436491865332-7a61a109cc05?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1174&q=80);
+  height: 100vh;
+  width: 100vw;
+  font-family: vollkorn sc;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
+
 img {
   height: 200px;
   width: 200px;
 }
 
+.login-page {
+  /* display: flex; */
+  /* align-items: center; */
+}
+
+.login-info {
+  display: flex;
+  padding-top: 20px;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  border-radius: 20px;
+  width: 50vh;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.4);
+  color: black;
+  margin: auto;
+  margin-top: 30vh;
+}
+.login-button {
+  font-family: 'Vollkorn SC';
+  margin-top: 10px;
+  background: #4B88B2;
+  width: 120px;
+  border: none;
+  border-radius: 20px;
+  font-size: 20px;
+}
+.travel-tracker {
+  margin-top: 4px;
+  margin-bottom: 0px;
+  font-size: 50px;
+  font-weight: lighter;
+}
+#username, #password {
+  background-color: #C4C4C4;
+  border: none;
+  height: 25px;
+  width: 250px;
+  text-align: center;
+  font-size: 20px;
+  font-family: 'Vollkorn SC';
+}
+.login-input {
+  font-size: 20px;
+}
 .hidden {
-  display: none !important; 
+  display: none !important;
 }

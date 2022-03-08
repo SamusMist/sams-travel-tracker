@@ -118,7 +118,6 @@ const getPostData = (e) => {
 }
 
 //Event Listeners
-// window.addEventListener("onload", makePromise());
 tripEstimateButton.addEventListener('click', calculateTripEstimate);
 adventureForm.addEventListener('submit', getPostData);
 loginForm.addEventListener('submit', (e) => {
