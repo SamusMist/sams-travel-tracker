@@ -95,14 +95,7 @@ nav {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  background: #566466;
-}
-
-.pending-data {
-  background-color: white;
-  border-radius: 10px;
-  margin: auto;
-  text-align: center;
+  background: #84ACB3;
 }
 
 .cost-holder {
@@ -121,20 +114,33 @@ nav {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  margin: auto;
   height: 20vh;
+  margin: auto;
 }
+
 .main-display {
   display: flex;
   flex-wrap: wrap;
   background: #566466;
 }
+
 #adventure-date, #adventure-days, #destination, #travelers, .trip-estimate, .submit-request {
   background-color: #84ACB3;
   border: none;
   font-family: vollkorn sc;
+  font-size: 12px;
+  margin: auto;
 }
+
+.est-label {
+  margin-top: 10px;
+}
+
+.trip-estimate, .submit-request {
+margin-bottom: 10px;
+background-color: #B38F72;
+}
+
 .past-trips, .future-trips {
   margin-top: 20px;
   display: flex;
@@ -146,18 +152,37 @@ nav {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  background: #84ACB3;;
+  background: #84ACB3;
 }
+
+.past-trips, .past-tag {
+  margin-right: 200px;
+}
+
 .past-tag, .future-tag {
   text-align: center;
-  font-size: 22px;
+  font-size: 30px;
 }
-.past-data, .future-data {
+
+.pending-data, .past-data, .future-data {
   background-color: white;
   border-radius: 10px;
   margin: auto;
   text-align: center;
-  margin-top: 10px;
+  margin-top: 15px;
+  box-shadow: 10px 5px 5px gray;
+}
+
+.past-future {
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+}
+
+.past-future-scroll {
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
 }
 
 .hidden {
